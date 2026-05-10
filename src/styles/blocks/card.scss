@@ -1,9 +1,13 @@
 .card {
-  width: 200px;
+  width: $card-width;
   padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $color-border;
   border-radius: 5px;
-  transition: transform 300ms;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     display: block;
@@ -18,14 +22,18 @@
     font-weight: 500;
     line-height: 18px;
     margin: 0 0 4px;
-    transition: color 300ms;
+    transition: color $transition-duration;
+  }
+
+  &:hover &__title {
+    color: $color-hover-title;
   }
 
   &__code {
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
-    color: #616070;
+    color: $color-secondary;
     margin: 0 0 16px;
   }
 
@@ -52,7 +60,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
-    color: #616070;
+    color: $color-secondary;
   }
 
   &__price-value {
@@ -67,7 +75,7 @@
     justify-content: center;
     align-items: center;
 
-    color: #fff;
+    color: $color-white;
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
@@ -76,25 +84,17 @@
 
     width: 100%;
     height: 40px;
-    border: 1px solid #00acdc;
+    border: 1px solid $color-blue;
     border-radius: 5px;
-    background-color: #00acdc;
+    background-color: $color-blue;
 
     transition:
-      color 300ms,
-      background-color 300ms;
+      color $transition-duration,
+      background-color $transition-duration;
   }
 
   &__button:hover {
-    background-color: #fff;
-    color: #00acdc;
+    background-color: $color-white;
+    color: $color-blue;
   }
-}
-
-.card:hover {
-  transform: scale(1.2);
-}
-
-.card:hover .card__title {
-  color: #34568b;
 }
